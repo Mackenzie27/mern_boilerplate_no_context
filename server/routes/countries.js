@@ -7,8 +7,11 @@ const router = express.Router()
 router.get('/', (req, res, next) => {
   Country.find()
     .then(countries => {
-      res.json(countries)
+      res.status(200).json(countries)
     })
+
+    // TO DO: FINISH ADDING STATUS CODES TO THE REST OF THIS PAGE. SEE ROUTES/TOTO.JS
+    // I DON'T UNDERSTAND THIS SYNTAX VS. THE EXAMPLE IN WEEK 2: DAY 1: MY COOL APP
     .catch(err => next(err))
 })
 
